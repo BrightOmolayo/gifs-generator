@@ -11,3 +11,8 @@ btn.addEventListener('click', () => {
       img.src = response.data.images.original.url
     })
 })
+
+document.getElementById('refreshbtn').addEventListener('click', function () {
+  // eslint-disable-next-line no-undef
+  location.reload()
+})
