@@ -19,3 +19,7 @@ img{
   text-align: center;
   border: 2px solid darkseagreen;
 }
+.image-container{
+  border: 2px solid darkseagreen;
+  padding-top: 2%;
+}

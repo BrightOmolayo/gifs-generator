@@ -1,24 +1,13 @@
-const searchInput = document.getElementById('searchInput')
-const searchBtn = document.getElementById('searchButton')
-const imgContainer = document.getElementById('image-container')
+const input = document.querySelector('input')
+const img = document.querySelector('img')
+const btn = document.querySelector('button')
 
-class WeatherService {
-  constructor () {
-    this.apiKey = '2a9c3825c4e14169a7c141107240402'
-  }
-
-  async fetchWeather (city) {
-    try {
-      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${this.apiKey}&q=${city}&days=5`
-
-      const response = await fetch(apiUrl, {
-        mode: 'cors'
-      })
-      const data = await response.json()
-
-      return data
-    } catch (error) {
-      console.log(error)
-    }
-  }
-}
+btn.addEventListener('click', () => {
+  fetch(`https://api.giphy.com/v1/gifs/translate?api_key=OPQ40UPzNNpk0gOkzNCIG5pZbmgntLrY&s=${input.value}`, { mode: 'cors' })
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (response) {
+      img.src = response.data.images.original.url
+    })
+})
